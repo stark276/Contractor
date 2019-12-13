@@ -87,7 +87,7 @@ def about():
 
 @app.route('/gallery')
 def gallery():
-    """About."""
+    """gallery."""
     return render_template('gallery.html')
 
 
