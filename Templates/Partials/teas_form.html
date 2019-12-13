@@ -1,0 +1,41 @@
+<form method='POST' action='/teas'>
+    <fieldset>
+    <legend>{{ title }}</legend>
+    <!-- Tea Flavor-->
+    <p>
+        <label for='tea_name'>Tea Flavor</label><br>
+        <input id="tea_name" type='text' name='tea_name' required/>
+    </p>
+
+    <!-- Description -->
+    <p>
+        <label for='description'>Description</label><br>
+        <input id ="description" type='text' name='description' required/>
+    </p>
+
+    <!-- Price -->
+    <p>
+        <label for='price'>Price</label><br>
+        <input id="price" type='number' name='price' required/>
+    </p>
+
+    <!-- flavor -->
+    <p>
+        <label for='flavor'>domain</label><br>
+        <input  type='radio' name='domain' value= "usa"/required> USA
+        <input  type='radio' name='domain' value= "quatemala"/required> Quatemala
+        <input  type='radio' name='domain' value= "india"/required> India
+        <input  type='radio' name='domain' value= "turkey"/required> Turkey
+    </p>
+
+
+
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button class="btn btn-primary" type='submit'>Save and continue</button>
+        <!-- Cancel button -->
+        <!-- <button><a href="">Cancel</a></button> -->
+    </p>
+</form>
