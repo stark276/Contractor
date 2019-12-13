@@ -1,0 +1,32 @@
+<!-- templates/tea_new.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/teas'>
+    <fieldset>
+    <legend>New List</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='title'>Title</label><br>
+        <input type='text' name='title' />
+    </p>
+    <p>
+        <label for='description'>Description</label><br>
+        <input type='text' name='description' />
+    </p>
+    <p>
+        <label for='image'>Add the link</label><br>
+        <input type='text' name='image' value='{{ tea.image }}'/>
+    </p>
+    
+      
+
+
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save</button>
+    </p>
+</form>
+{% endblock %}
