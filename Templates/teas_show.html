@@ -2,28 +2,34 @@
 
 {% block content %}
 
-<a href='/'>Back to Home</a>
+<a href='/'>Back</a>
 
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
 
 		<!-- tea Name -->
-		<h1>{{ tea.tea_name }}</h1>
+		<h1 class="text-danger">{{ tea.tea_name }}</h1>
 
 		<!-- tea Picture -->
 		<div class="card"><div class="card-body">
-			<img width="300"  height="300" src="/static/{{tea.color}}.png">
-		</div></div>
+            <img width="400"  height="400" src="/static/{{tea.link}}.png">
+        </div></div>
+        
+
 
 		<!-- Description of the tea -->
-		<h2>{{ tea.description }}</h2>
+		<p class="text-danger"><bold><strong>{{ tea.description }}</strong></bold></p>
 
 		<!-- tea Price -->
-		<h2>${{ tea.price}}</h2>
+		<h2><italic>${{ tea.price}}</italic></h2>
 
 
 		<p><a href="/teas/{{ tea._id }}/edit"><button  class="btn btn-primary">Edit</button></a></p>
-		
+		<p><form method="POST" action="/teas/{{tea._id}}/delete">
+			<input type='hidden' name='_method' value='DELETE'>
+
+			<button class="btn btn-primary" type="submit">Delete</button>
+		</form></p>
 	</div>
 </div>
 {% endblock %}

@@ -13,24 +13,24 @@ app = Flask(__name__)
 
 # teas = [
 #     { 'title': 'mango', 'description': 'bellisimo' },
-#     { 'title': '80\'s Music', 'description': 'Don\'t stop believing!' }
+#     { 'title': '80\'s Music', 'description': 'Stop believing!' }
 # ]
 
 @app.route('/')
 def teas_index():
     """Show all lists."""
-    return render_template('tea_index.html', teas=teas.find())
+    return render_template('teas_index.html', teas=teas.find())
 
 
 @app.route('/teas/new')
 def teas_new():
     """Create a new tea list."""
-    return render_template('tea_new.html',  tea ={}, title ="create new")
+    return render_template('teas_new.html',  tea ={}, title ="create new")
 
 
 @app.route('/teas/<tea_id>')
 def teas_show(tea_id):
-    ''' shows the info for one individual plant '''
+    
     tea = teas.find_one({'_id': ObjectId(tea_id)})
     return render_template('teas_show.html', tea=tea)
 
@@ -69,7 +69,10 @@ def teas_update(tea_id):
 	return redirect(url_for("teas_show", tea_id = tea_id))
 
 
-
+@app.route("/teas/<tea_id>/delete", methods=["POST"])
+def teas_delete(tea_id):
+	teas.delete_one({"_id" : ObjectId(tea_id)})
+	return redirect(url_for("teas_index"))
 
 
 
