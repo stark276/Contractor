@@ -197,6 +197,6 @@ Temporary Items
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
-env
+.env
 *.pyc
 # End of https://www.gitignore.io/api/macos,flask,python,visualstudiocode
