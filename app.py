@@ -1,4 +1,4 @@
-from bson.objectid import ObjectId
+from bson.objectid import *
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 import os
