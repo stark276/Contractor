@@ -4,7 +4,7 @@ from pymongo import MongoClient
 import os
 
 
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Teas_tore')
+host = os.environ.get('MONGODB_URI','mongodb://localhost:27017/Teas_tore')
 
 
 client = MongoClient(host=f'{host}?retryWrites=false')
