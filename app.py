@@ -1,10 +1,10 @@
-from bson.objectid import *
+from bson import ObjectId
 from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
 import os
 
 
-host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Teas')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Teas_tore')
 
 
 client = MongoClient(host=f'{host}?retryWrites=false')
@@ -105,5 +105,5 @@ def gallery():
 
 
 if __name__ == '__main__':
-    # update the below line to the following:
-    app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
+    
+    app.run(debug=True, host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
