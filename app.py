@@ -1,5 +1,5 @@
-from bson.objectid import ObjectId
 from flask import Flask, render_template, request, redirect, url_for
+from bson.objectid import ObjectId
 from pymongo import MongoClient
 import os
 
@@ -19,7 +19,6 @@ app = Flask(__name__)
 # teas = [
 #     { 'title': 'mango', 'description': 'bellisimo' },
 #     { 'title': '80\'s Music', 'description': 'Stop believing!' }
-# ]
 
 @app.route('/')
 def teas_index():
