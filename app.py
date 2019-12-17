@@ -1,10 +1,10 @@
+from bson import ObjectId
 from flask import Flask, render_template, request, redirect, url_for
-from bson.objectid import ObjectId
 from pymongo import MongoClient
 import os
 
 
-host = os.environ.get('MONGODB_URI','mongodb://localhost:27017/Teas_tore')
+host = os.environ.get('MONGODB_URI', 'mongodb://localhost:27017/Teas_tore')
 
 
 client = MongoClient(host=f'{host}?retryWrites=false')
@@ -79,16 +79,6 @@ def teas_delete(tea_id):
 	return redirect(url_for("teas_index"))
 
 
-@app.route('/about')
-def about():
-    """About."""
-    return render_template('about.html')
-
-@app.route('/gallery')
-def gallery():
-    """gallery."""
-    return render_template('gallery.html')
-
 
 
 
@@ -106,7 +96,3 @@ def gallery():
 if __name__ == '__main__':
 
     app.run(debug=True, host='0.0.0.0', port=os.environ.get('PORT', 5000))
-
-    
-# if __name__ == '__main__':
-#     app.run(debug=True)
